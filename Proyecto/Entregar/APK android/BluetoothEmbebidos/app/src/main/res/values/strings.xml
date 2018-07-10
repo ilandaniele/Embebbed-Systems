@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">BluetoothEmbebidos</string>
+    <string name="title_activity_lista_dispositivos">ListaDispositivos</string>
+</resources>

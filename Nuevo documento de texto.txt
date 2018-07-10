@@ -1,0 +1,12 @@
+key = get_k(adc);
+if (key!=oldkey){
+	if(key != NO_key && !apretando){
+			key down;
+			apretando =true;
+	else{	
+		if(apretando){
+			old_key UP
+		}
+	}
+old_key=key;
+}

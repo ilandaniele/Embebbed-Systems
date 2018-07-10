@@ -1,0 +1,349 @@
+
+Laboratorio 1- Actividad 3.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000002  00800100  000001f6  0000028a  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         000001f6  00000000  00000000  00000094  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .bss          00000004  00800102  00800102  0000028c  2**0
+                  ALLOC
+  3 .comment      00000030  00000000  00000000  0000028c  2**0
+                  CONTENTS, READONLY
+  4 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  000002bc  2**2
+                  CONTENTS, READONLY
+  5 .debug_aranges 00000020  00000000  00000000  000002fc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_info   000008db  00000000  00000000  0000031c  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_abbrev 000006bc  00000000  00000000  00000bf7  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_line   00000302  00000000  00000000  000012b3  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_frame  00000024  00000000  00000000  000015b8  2**2
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_str    00000414  00000000  00000000  000015dc  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_loc    00000240  00000000  00000000  000019f0  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_ranges 00000028  00000000  00000000  00001c30  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 34 00 	jmp	0x68	; 0x68 <__ctors_end>
+   4:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+   8:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+   c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  10:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  14:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  18:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  1c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  20:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  24:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  28:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  2c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  30:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  34:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  38:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  3c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  40:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  44:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  48:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  4c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  50:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  54:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  58:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  5c:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  60:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+  64:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__bad_interrupt>
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+
+00000074 <__do_copy_data>:
+  74:	11 e0       	ldi	r17, 0x01	; 1
+  76:	a0 e0       	ldi	r26, 0x00	; 0
+  78:	b1 e0       	ldi	r27, 0x01	; 1
+  7a:	e6 ef       	ldi	r30, 0xF6	; 246
+  7c:	f1 e0       	ldi	r31, 0x01	; 1
+  7e:	02 c0       	rjmp	.+4      	; 0x84 <__do_copy_data+0x10>
+  80:	05 90       	lpm	r0, Z+
+  82:	0d 92       	st	X+, r0
+  84:	a2 30       	cpi	r26, 0x02	; 2
+  86:	b1 07       	cpc	r27, r17
+  88:	d9 f7       	brne	.-10     	; 0x80 <__do_copy_data+0xc>
+
+0000008a <__do_clear_bss>:
+  8a:	21 e0       	ldi	r18, 0x01	; 1
+  8c:	a2 e0       	ldi	r26, 0x02	; 2
+  8e:	b1 e0       	ldi	r27, 0x01	; 1
+  90:	01 c0       	rjmp	.+2      	; 0x94 <.do_clear_bss_start>
+
+00000092 <.do_clear_bss_loop>:
+  92:	1d 92       	st	X+, r1
+
+00000094 <.do_clear_bss_start>:
+  94:	a6 30       	cpi	r26, 0x06	; 6
+  96:	b2 07       	cpc	r27, r18
+  98:	e1 f7       	brne	.-8      	; 0x92 <.do_clear_bss_loop>
+  9a:	0e 94 53 00 	call	0xa6	; 0xa6 <main>
+  9e:	0c 94 f9 00 	jmp	0x1f2	; 0x1f2 <_exit>
+
+000000a2 <__bad_interrupt>:
+  a2:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+000000a6 <main>:
+const int debounceDelay = 50;    // the debounce time; increase if the output flickers
+int estadoActual = 6;
+int main()
+{
+	//Inicializar el pin del pulsador como entrada
+	DDRD &= ~(1<<DDD2);
+  a6:	52 98       	cbi	0x0a, 2	; 10
+	//Inicializar el pin del led como salida
+	DDRB |= (1<<DDB5);
+  a8:	25 9a       	sbi	0x04, 5	; 4
+						}break;
+						
+						case 6:{
+							//apagado
+							//debo prender el led
+							estadoActual=1;
+  aa:	21 e0       	ldi	r18, 0x01	; 1
+  ac:	30 e0       	ldi	r19, 0x00	; 0
+	DDRB |= (1<<DDB5);
+	
+	while (1)
+	{
+		//Leer el estado del pulsador
+		buttonState = PIND & (1<<PD2);
+  ae:	89 b1       	in	r24, 0x09	; 9
+  b0:	84 70       	andi	r24, 0x04	; 4
+  b2:	90 e0       	ldi	r25, 0x00	; 0
+  b4:	90 93 05 01 	sts	0x0105, r25	; 0x800105 <buttonState+0x1>
+  b8:	80 93 04 01 	sts	0x0104, r24	; 0x800104 <buttonState>
+		
+		//Si cambió el estado del pulsador...
+		if (buttonState != lastButtonState)
+  bc:	40 91 02 01 	lds	r20, 0x0102	; 0x800102 <__data_end>
+  c0:	50 91 03 01 	lds	r21, 0x0103	; 0x800103 <__data_end+0x1>
+  c4:	84 17       	cp	r24, r20
+  c6:	95 07       	cpc	r25, r21
+  c8:	09 f4       	brne	.+2      	; 0xcc <main+0x26>
+  ca:	40 c0       	rjmp	.+128    	; 0x14c <main+0xa6>
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+  cc:	4f ef       	ldi	r20, 0xFF	; 255
+  ce:	80 e7       	ldi	r24, 0x70	; 112
+  d0:	92 e0       	ldi	r25, 0x02	; 2
+  d2:	41 50       	subi	r20, 0x01	; 1
+  d4:	80 40       	sbci	r24, 0x00	; 0
+  d6:	90 40       	sbci	r25, 0x00	; 0
+  d8:	e1 f7       	brne	.-8      	; 0xd2 <main+0x2c>
+  da:	00 c0       	rjmp	.+0      	; 0xdc <main+0x36>
+  dc:	00 00       	nop
+		{
+			//Se espera un tiempo para evitar leer el ruido del rebote del pulsador
+			_delay_ms(debounceDelay);
+
+			//Se vuelve a leer el estado del pulsador
+			buttonState = PIND & (1<<PD2);
+  de:	89 b1       	in	r24, 0x09	; 9
+  e0:	84 70       	andi	r24, 0x04	; 4
+  e2:	90 e0       	ldi	r25, 0x00	; 0
+  e4:	90 93 05 01 	sts	0x0105, r25	; 0x800105 <buttonState+0x1>
+  e8:	80 93 04 01 	sts	0x0104, r24	; 0x800104 <buttonState>
+
+			//Si el cambio se mantiene, se interpreta como evento de keydown/keyup válido
+			if (buttonState != lastButtonState)
+  ec:	40 91 02 01 	lds	r20, 0x0102	; 0x800102 <__data_end>
+  f0:	50 91 03 01 	lds	r21, 0x0103	; 0x800103 <__data_end+0x1>
+  f4:	84 17       	cp	r24, r20
+  f6:	95 07       	cpc	r25, r21
+  f8:	d1 f2       	breq	.-76     	; 0xae <main+0x8>
+			{
+				//El pulso es válido, se implementa la lógica del sistema
+
+				//Si no está presionado el pulsador (se detectó un keyup)...
+				if (!buttonState)
+  fa:	89 2b       	or	r24, r25
+  fc:	f1 f4       	brne	.+60     	; 0x13a <main+0x94>
+				{
+					switch(estadoActual){
+  fe:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+ 102:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__data_start+0x1>
+ 106:	85 30       	cpi	r24, 0x05	; 5
+ 108:	91 05       	cpc	r25, r1
+ 10a:	69 f0       	breq	.+26     	; 0x126 <main+0x80>
+ 10c:	24 f4       	brge	.+8      	; 0x116 <main+0x70>
+ 10e:	81 30       	cpi	r24, 0x01	; 1
+ 110:	91 05       	cpc	r25, r1
+ 112:	74 f4       	brge	.+28     	; 0x130 <main+0x8a>
+ 114:	12 c0       	rjmp	.+36     	; 0x13a <main+0x94>
+ 116:	06 97       	sbiw	r24, 0x06	; 6
+ 118:	81 f4       	brne	.+32     	; 0x13a <main+0x94>
+						}break;
+						
+						case 6:{
+							//apagado
+							//debo prender el led
+							estadoActual=1;
+ 11a:	30 93 01 01 	sts	0x0101, r19	; 0x800101 <__data_start+0x1>
+ 11e:	20 93 00 01 	sts	0x0100, r18	; 0x800100 <__data_start>
+							PORTB |= (1<<PB5);
+ 122:	2d 9a       	sbi	0x05, 5	; 5
+						}break;
+ 124:	0a c0       	rjmp	.+20     	; 0x13a <main+0x94>
+						estadoActual++;
+						break;
+						case 5:{
+							//medio segundo encendido y un segundo apagado
+							//debo apagar el led
+							PORTB &= ~(1<<PB5);
+ 126:	2d 98       	cbi	0x05, 5	; 5
+							estadoActual++;
+ 128:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+ 12c:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__data_start+0x1>
+ 130:	01 96       	adiw	r24, 0x01	; 1
+ 132:	90 93 01 01 	sts	0x0101, r25	; 0x800101 <__data_start+0x1>
+ 136:	80 93 00 01 	sts	0x0100, r24	; 0x800100 <__data_start>
+							PORTB |= (1<<PB5);
+						}break;
+					}
+				}
+				//Si hubo cambios válidos actualizo el valor de lectura anterior
+				lastButtonState = buttonState;
+ 13a:	80 91 04 01 	lds	r24, 0x0104	; 0x800104 <buttonState>
+ 13e:	90 91 05 01 	lds	r25, 0x0105	; 0x800105 <buttonState+0x1>
+ 142:	90 93 03 01 	sts	0x0103, r25	; 0x800103 <__data_end+0x1>
+ 146:	80 93 02 01 	sts	0x0102, r24	; 0x800102 <__data_end>
+ 14a:	b1 cf       	rjmp	.-158    	; 0xae <main+0x8>
+			}
+		}
+		else{
+			//lastButtonState es igual a buttonState (no cambiaron)
+			switch(estadoActual){
+ 14c:	80 91 00 01 	lds	r24, 0x0100	; 0x800100 <__data_start>
+ 150:	90 91 01 01 	lds	r25, 0x0101	; 0x800101 <__data_start+0x1>
+ 154:	83 30       	cpi	r24, 0x03	; 3
+ 156:	91 05       	cpc	r25, r1
+ 158:	21 f1       	breq	.+72     	; 0x1a2 <main+0xfc>
+ 15a:	ac f4       	brge	.+42     	; 0x186 <main+0xe0>
+ 15c:	02 97       	sbiw	r24, 0x02	; 2
+ 15e:	09 f0       	breq	.+2      	; 0x162 <main+0xbc>
+ 160:	a6 cf       	rjmp	.-180    	; 0xae <main+0x8>
+ 162:	4f ef       	ldi	r20, 0xFF	; 255
+ 164:	87 ea       	ldi	r24, 0xA7	; 167
+ 166:	91 e6       	ldi	r25, 0x61	; 97
+ 168:	41 50       	subi	r20, 0x01	; 1
+ 16a:	80 40       	sbci	r24, 0x00	; 0
+ 16c:	90 40       	sbci	r25, 0x00	; 0
+ 16e:	e1 f7       	brne	.-8      	; 0x168 <main+0xc2>
+ 170:	00 c0       	rjmp	.+0      	; 0x172 <main+0xcc>
+ 172:	00 00       	nop
+				case 2:{
+					//titilando a 0.5Hz, 2 segundos
+					_delay_ms(2000);
+					PORTB &= ~(1<<PB5); //Apaga el Led
+ 174:	2d 98       	cbi	0x05, 5	; 5
+ 176:	4f ef       	ldi	r20, 0xFF	; 255
+ 178:	87 ea       	ldi	r24, 0xA7	; 167
+ 17a:	91 e6       	ldi	r25, 0x61	; 97
+ 17c:	41 50       	subi	r20, 0x01	; 1
+ 17e:	80 40       	sbci	r24, 0x00	; 0
+ 180:	90 40       	sbci	r25, 0x00	; 0
+ 182:	e1 f7       	brne	.-8      	; 0x17c <main+0xd6>
+ 184:	32 c0       	rjmp	.+100    	; 0x1ea <main+0x144>
+				lastButtonState = buttonState;
+			}
+		}
+		else{
+			//lastButtonState es igual a buttonState (no cambiaron)
+			switch(estadoActual){
+ 186:	84 30       	cpi	r24, 0x04	; 4
+ 188:	91 05       	cpc	r25, r1
+ 18a:	99 f0       	breq	.+38     	; 0x1b2 <main+0x10c>
+ 18c:	05 97       	sbiw	r24, 0x05	; 5
+ 18e:	09 f0       	breq	.+2      	; 0x192 <main+0xec>
+ 190:	8e cf       	rjmp	.-228    	; 0xae <main+0x8>
+ 192:	4f ef       	ldi	r20, 0xFF	; 255
+ 194:	89 e6       	ldi	r24, 0x69	; 105
+ 196:	98 e1       	ldi	r25, 0x18	; 24
+ 198:	41 50       	subi	r20, 0x01	; 1
+ 19a:	80 40       	sbci	r24, 0x00	; 0
+ 19c:	90 40       	sbci	r25, 0x00	; 0
+ 19e:	e1 f7       	brne	.-8      	; 0x198 <main+0xf2>
+ 1a0:	1a c0       	rjmp	.+52     	; 0x1d6 <main+0x130>
+ 1a2:	4f ef       	ldi	r20, 0xFF	; 255
+ 1a4:	83 ed       	ldi	r24, 0xD3	; 211
+ 1a6:	90 e3       	ldi	r25, 0x30	; 48
+ 1a8:	41 50       	subi	r20, 0x01	; 1
+ 1aa:	80 40       	sbci	r24, 0x00	; 0
+ 1ac:	90 40       	sbci	r25, 0x00	; 0
+ 1ae:	e1 f7       	brne	.-8      	; 0x1a8 <main+0x102>
+ 1b0:	12 c0       	rjmp	.+36     	; 0x1d6 <main+0x130>
+ 1b2:	4f ef       	ldi	r20, 0xFF	; 255
+ 1b4:	89 e6       	ldi	r24, 0x69	; 105
+ 1b6:	98 e1       	ldi	r25, 0x18	; 24
+ 1b8:	41 50       	subi	r20, 0x01	; 1
+ 1ba:	80 40       	sbci	r24, 0x00	; 0
+ 1bc:	90 40       	sbci	r25, 0x00	; 0
+ 1be:	e1 f7       	brne	.-8      	; 0x1b8 <main+0x112>
+ 1c0:	00 c0       	rjmp	.+0      	; 0x1c2 <main+0x11c>
+ 1c2:	00 00       	nop
+					PORTB |= (1<<PB5);	//Enciende el Led
+				}break;
+				case 4:{
+					//titilando a 2Hz, 0.5 segundos
+					_delay_ms(500);
+					PORTB &= ~(1<<PB5); //Apaga el Led
+ 1c4:	2d 98       	cbi	0x05, 5	; 5
+ 1c6:	4f ef       	ldi	r20, 0xFF	; 255
+ 1c8:	89 e6       	ldi	r24, 0x69	; 105
+ 1ca:	98 e1       	ldi	r25, 0x18	; 24
+ 1cc:	41 50       	subi	r20, 0x01	; 1
+ 1ce:	80 40       	sbci	r24, 0x00	; 0
+ 1d0:	90 40       	sbci	r25, 0x00	; 0
+ 1d2:	e1 f7       	brne	.-8      	; 0x1cc <main+0x126>
+ 1d4:	0a c0       	rjmp	.+20     	; 0x1ea <main+0x144>
+ 1d6:	00 c0       	rjmp	.+0      	; 0x1d8 <main+0x132>
+ 1d8:	00 00       	nop
+					PORTB |= (1<<PB5);	//Enciende el Led
+				}break;
+				case 5:{
+					//medio segundo encendido y un segundo apagado
+					_delay_ms(500);
+					PORTB &= ~(1<<PB5); //Apaga el Led
+ 1da:	2d 98       	cbi	0x05, 5	; 5
+ 1dc:	4f ef       	ldi	r20, 0xFF	; 255
+ 1de:	83 ed       	ldi	r24, 0xD3	; 211
+ 1e0:	90 e3       	ldi	r25, 0x30	; 48
+ 1e2:	41 50       	subi	r20, 0x01	; 1
+ 1e4:	80 40       	sbci	r24, 0x00	; 0
+ 1e6:	90 40       	sbci	r25, 0x00	; 0
+ 1e8:	e1 f7       	brne	.-8      	; 0x1e2 <main+0x13c>
+ 1ea:	00 c0       	rjmp	.+0      	; 0x1ec <main+0x146>
+ 1ec:	00 00       	nop
+					_delay_ms(1000);
+					PORTB |= (1<<PB5);	//Enciende el Led
+ 1ee:	2d 9a       	sbi	0x05, 5	; 5
+				}break;
+ 1f0:	5e cf       	rjmp	.-324    	; 0xae <main+0x8>
+
+000001f2 <_exit>:
+ 1f2:	f8 94       	cli
+
+000001f4 <__stop_program>:
+ 1f4:	ff cf       	rjmp	.-2      	; 0x1f4 <__stop_program>

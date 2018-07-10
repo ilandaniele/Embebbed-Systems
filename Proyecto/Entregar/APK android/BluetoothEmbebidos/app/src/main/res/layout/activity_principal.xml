@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.usuario.bluetoothembebidos.Principal">
+
+
+    <TextView
+        android:id="@+id/tv_tituloModos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="6dp"
+        android:layout_y="3dp"
+        android:text="Modos de operación" />
+
+    <TextView
+        android:id="@+id/tv_Opciones"
+        android:layout_width="105dp"
+        android:layout_height="wrap_content"
+        android:layout_x="6dp"
+        android:layout_y="251dp"
+        android:text="Opciones:"
+        tools:layout_editor_absoluteX="231dp"
+        tools:layout_editor_absoluteY="173dp" />
+
+    <Button
+        android:id="@+id/boton_IncRetardo"
+        android:layout_width="wrap_content"
+        android:layout_height="34dp"
+        android:layout_x="87dp"
+        android:layout_y="286dp"
+        android:text="+"
+        android:textSize="12sp" />
+
+    <Button
+        android:id="@+id/boton_DecRetardo"
+        android:layout_width="wrap_content"
+        android:layout_height="33dp"
+        android:layout_x="180dp"
+        android:layout_y="286dp"
+        android:text="-"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="137dp"
+        tools:layout_editor_absoluteY="11dp" />
+
+    <TextView
+        android:id="@+id/tv_Retardo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="11dp"
+        android:layout_y="294dp"
+        android:text="Retardo"
+        tools:layout_editor_absoluteX="13dp"
+        tools:layout_editor_absoluteY="234dp" />
+
+    <TextView
+        android:id="@+id/tv_Espaciado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="8dp"
+        android:layout_y="337dp"
+        android:text="Espaciado"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="262dp" />
+
+    <Button
+        android:id="@+id/boton_IncEspaciado"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_x="88dp"
+        android:layout_y="329dp"
+        android:text="+"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="81dp"
+        tools:layout_editor_absoluteY="261dp" />
+
+    <Button
+        android:id="@+id/boton_DecEspaciado"
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:layout_x="181dp"
+        android:layout_y="330dp"
+        android:text="-"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="198dp"
+        tools:layout_editor_absoluteY="264dp" />
+
+    <TextView
+        android:id="@+id/tv_imprimirString"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_x="5dp"
+        android:layout_y="38dp"
+        android:text="Imprimir string: "
+        tools:layout_editor_absoluteX="3dp"
+        tools:layout_editor_absoluteY="29dp" />
+
+    <Button
+        android:id="@+id/boton_abecedario"
+        android:layout_width="200dp"
+        android:layout_height="35dp"
+        android:layout_x="6dp"
+        android:layout_y="75dp"
+        android:text="Abecedario"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="5dp"
+        tools:layout_editor_absoluteY="64dp" />
+
+    <Button
+        android:id="@+id/boton_bandas"
+        android:layout_width="202dp"
+        android:layout_height="37dp"
+        android:layout_x="6dp"
+        android:layout_y="115dp"
+        android:text="Rolling Stones"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="13dp"
+        tools:layout_editor_absoluteY="120dp" />
+
+    <EditText
+        android:id="@+id/editText_CampoString"
+        android:layout_width="143dp"
+        android:layout_height="wrap_content"
+        android:layout_x="115dp"
+        android:layout_y="30dp"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="130dp"
+        tools:layout_editor_absoluteY="33dp" />
+
+    <Button
+        android:id="@+id/boton_enviarString"
+        android:layout_width="68dp"
+        android:layout_height="35dp"
+        android:layout_x="265dp"
+        android:layout_y="30dp"
+        android:text="Enviar"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="309dp"
+        tools:layout_editor_absoluteY="22dp" />
+
+    <Button
+        android:id="@+id/boton_acdc"
+        android:layout_width="203dp"
+        android:layout_height="36dp"
+        android:layout_x="6dp"
+        android:layout_y="155dp"
+        android:text="ACDC"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="7dp"
+        tools:layout_editor_absoluteY="148dp" />
+
+    <Button
+        android:id="@+id/boton_hora"
+        android:layout_width="199dp"
+        android:layout_height="38dp"
+        android:layout_x="9dp"
+        android:layout_y="195dp"
+        android:text="Hora"
+        android:textSize="12sp"
+        tools:layout_editor_absoluteX="9dp"
+        tools:layout_editor_absoluteY="193dp" />
+
+</AbsoluteLayout>
